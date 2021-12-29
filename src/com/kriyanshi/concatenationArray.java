@@ -1,2 +1,5 @@
-package com.kriyanshi;public class concatenationArray {
+package com.kriyanshi;
+
+public class concatenationArray {
+    
 }
