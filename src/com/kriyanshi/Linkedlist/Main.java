@@ -7,6 +7,9 @@ public class Main {
         list.insertFirst(5);
         list.insertFirst(6);
         list.insertFirst(7);
+        list.insertLast(1);
+        list.insert(2,4);
+        System.out.println(list.deleteFirst());
         list.display();
     }
 }
