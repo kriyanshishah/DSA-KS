@@ -19,6 +19,7 @@ public class linkedlist {
         if(tail == null){
             tail = head;
         }
+        size++;
     }
 
     public void display(){
@@ -59,13 +60,48 @@ public class linkedlist {
         size++;
     }
 
+    public int deleteLast(){
+        if(size <= 1){
+            return deleteFirst();
+        }
+//        System.out.println(size);
+        Node secondLast = get(size - 2);
+//        System.out.println(secondLast.value);
+        int value = tail.value;
+        tail = secondLast;
+        tail.next = null;
+        size--;
+        return value;
+    }
+
+    public Node get(int index){
+        Node node = head;
+        for(int i=0; i<index;i++){
+            node = node.next;
+        }
+//        System.out.println("sout" + node.value);
+        return node;
+    }
+
+    public int delete(int index){
+        if(index == 0){
+            return deleteFirst();
+        }else if(index == size - 1){
+            return deleteLast();
+        }
+        Node prev = get(index - 1);
+        System.out.println(prev.value);
+
+        return prev.value;
+    }
+
     public int deleteFirst(){
         int value = head.value;
         head = head.next;
         if(head == tail){
             tail = null;
         }
-        size++;
+        size--;
         return value;
     }
 
